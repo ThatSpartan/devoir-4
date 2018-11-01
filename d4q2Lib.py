@@ -1,14 +1,21 @@
 ﻿def effaceTableau (tab):
-   '''
-   (list) -> None
-   Cette fonction prepare le tableau de jeu (la matrice) 
-   en mettant '-' dans tous les elements.
-   Elle ne crée pas une nouvelle matrice
-   Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
-   '''
-   
+    '''
+    (list) -> None
+    Cette fonction prepare le tableau de jeu (la matrice) 
+    en mettant '-' dans tous les elements.
+    Elle ne crée pas une nouvelle matrice
+    Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
+    '''
+
     # a completer
     
+    # si la matrice est n x n, on peut dire que la longeur du tableau est la même longeur que les sous tableaux
+    n = len(tab)
+
+    for y in range(n):
+        for x in range(n):
+            tab[y][x] = '-'
+
     # retourne rien
 
       
@@ -28,21 +35,23 @@ def verifieGagner(tab):
     '''
 
     # a completer
-   
+
+    # voir plus bas
+
     return False  # a changer
 
  
 def testLignes(tab):
-   ''' (list) ->  str
-   * verifie s’il y a une ligne gagnante.
-   * cherche trois 'X' ou trois 'O' dans une ligne.  
-   * Si on trouve, le caractere 'X' ou 'O' et retourné, sinon '-' est retourné.
-   * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
-   '''
+    ''' (list) ->  str
+    * verifie s’il y a une ligne gagnante.
+    * cherche trois 'X' ou trois 'O' dans une ligne.  
+    * Si on trouve, le caractere 'X' ou 'O' et retourné, sinon '-' est retourné.
+    * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
+    '''
 
-   # a completer
-  
-   return '-' # a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant 
+    # a completer
+    
+    return '-' # a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant 
 
   
   
@@ -60,29 +69,29 @@ def testCols(tab):
 
    
 def testDiags(tab):
-   ''' (list) ->  str
-   * cherche trois 'X' ou trois 'O' dans une diagonale.  
-   * Si on trouve, le caractere 'X' ou 'O' et retourné
-   * sinon '-' est retourné.
-   * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
-   '''
+    ''' (list) ->  str
+    * cherche trois 'X' ou trois 'O' dans une diagonale.  
+    * Si on trouve, le caractere 'X' ou 'O' et retourné
+    * sinon '-' est retourné.
+    * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
+    '''
 
-   # a completer
-    
-   return '-'   # a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant
+    # a completer
+        
+    return '-'   # a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant
 
   
   
 def testMatchNul(tab):
-   ''' (list) ->  bool
-   * verifie s’il y a un match nul
-   * verifie si tous les elements de la matrice contiennent X ou O, pas '-'.  
-   * Si on ne trouve pas de '-' dans la matrice, retourne True. 
-   * S'il y a de '-', retourne false.
-   * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
-   '''
+    ''' (list) ->  bool
+    * verifie s’il y a un match nul
+    * verifie si tous les elements de la matrice contiennent X ou O, pas '-'.  
+    * Si on ne trouve pas de '-' dans la matrice, retourne True. 
+    * S'il y a de '-', retourne false.
+    * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
+    '''
+        
+    # a completer
     
-   # a completer
-  
-   return False  # a changer
+    return False  # a changer
 
