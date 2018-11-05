@@ -58,19 +58,24 @@ def joue (tab, joueur):
 
 # Créer le tableau de jeu 
 tableau = [['-','-','-'],['-','-','-'],['-','-','-']] # la seule matrice utilisé dans le programme.
-    
-reponse = input("Commence un jeu (O ou N): ");    
-while reponse == 'o' or reponse == 'O': 
+
+reponse = input("Commence un jeu (O ou N): ").lower()
+while reponse == 'o' or reponse == 'oui': 
       effaceTableau(tableau)  # prepare le tableau de jeu
-      gagnant = False  # initialise la variable gagnant 
+
+      gagnant = False  # initialise la variable gagnant
+
       while not gagnant: 
         afficheTableau(tableau) # affiche le tableau de jeu
         joue(tableau,'X')  # demande joueur X de jouer
+
         gagnant = verifieGagner(tableau)  # il a gagné?
+
         if not gagnant: 
           # pas de gagnant, l’autre joueur peut jouer
           afficheTableau(tableau) # affiche le tableau de jeu
           joue(tableau,'O')  # demande joueur O de jouer
+          
           gagnant = verifieGagner(tableau)  # il a gagné?
           
       afficheTableau(tableau) #  affiche le tableau de jeu

@@ -1,33 +1,4 @@
-﻿from q4d1 import show_m
-
-"""
-Le tableau du jeu sera représenté par [y][x]
-
-  x1 x2 x3
-y1
-y2
-y3
-
-[
-    [c, c, c],
-    [c, c, c],
-    [c, c, c],
-]
-
-donc les sous tableaux représentent les lignes
-"""
-
-def inverse(tab):
-
-    if all([list == type(e) for e in tab]):
-        for l in tab:
-            inverse(l)
-    
-    if all([int == type(e) for e in tab]):
-        tab[0], tab[1] = tab[1], tab[0]
-
-
-def effaceTableau (tab):
+﻿def effaceTableau (tab):
     '''
     (list) -> None
     Cette fonction prepare le tableau de jeu (la matrice) 
@@ -63,24 +34,11 @@ def verifieGagner(tab):
     * Ces fonctions retournent le gagnant 'X' ou 'O', ou '-' s'il n'y a pas de gagnant
     '''
 
-    # a completer
+    if testLignes(tab) != '-' and testCols(tab) != '-':
+        return True
 
-    # voir plus bas
+    return False
 
-    return False  # a changer
-
-def test(combos, tab):
-    for combo in combos:
-        fx, fy = combo[0]
-        compare = tab[fy][fx]
-        print(f"testing with first cell {fx, fy} -> {compare}")
-        o = ''
-        for x, y in combo:
-            o += f"{tab[y][x]} "
-        print(o)
-
-        if all(compare == tab[y][x] for x, y in combo):
-            print('All Equal')
 
 def testLignes(tab):
     ''' (list) ->  str
@@ -90,32 +48,39 @@ def testLignes(tab):
     * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
     '''
 
-    # a completer
-
-    combos = [[[x, y] for x in range(3)] for y in range(3)]
-    # print(combos)
-    show_m(combos)
-    test(combos, tab)
-    inverse(combos)
-    show_m(combos)
-    test(combos, tab)
-
+    if (tab[0][0] == tab[0][1] == tab[0][2] != '-'):
+        print('Joueur', tab[0][0], 'gagne')
+        return tab[0][0]
+    elif (tab[1][0] == tab[1][1] == tab[1][2] != '-'):
+        print('Joueur', tab[0][0], 'gagne')
+        return tab[1][0]
+    elif (tab[2][0] == tab[2][1] == tab[2][2] != '-'):
+        print('Joueur', tab[0][0], 'gagne')
+        return tab[2][0]
 
     return '-' # a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant 
 
   
   
 def testCols(tab):
-   ''' (list) ->  str
-   * verifie s’il y a une colonne gagnante.
-   * cherche trois 'X' ou trois 'O' dans une colonne.  
-   * Si on trouve, le caractere 'X' ou 'O' et retourné, sinon '-' est retourné.
-   * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
-   '''
+    ''' (list) ->  str
+    * verifie s’il y a une colonne gagnante.
+    * cherche trois 'X' ou trois 'O' dans une colonne.  
+    * Si on trouve, le caractere 'X' ou 'O' et retourné, sinon '-' est retourné.
+    * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
+    '''
     
-   # a completer
+    if (tab[0][0] == tab[1][0] == tab[2][0] != '-'):
+        print('Joueur', tab[0][0], 'gagne')
+        return tab[0][0]
+    elif (tab[0][1] == tab[1][1] == tab[r][2] != '-'):
+        print('Joueur', tab[0][1], 'gagne')
+        return tab[1][0]
+    elif (tab[0][2] == tab[1][2] == tab[2][2] != '-'):
+        print('Joueur', tab[0][2], 'gagne')
+        return tab[0][2]
   
-   return '-'   #a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant
+    return '-'   #a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant
 
    
 def testDiags(tab):
