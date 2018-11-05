@@ -100,7 +100,7 @@ def testLignes(tab):
     show_m(combos)
     test(combos, tab)
 
-    
+
     return '-' # a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant 
 
   
