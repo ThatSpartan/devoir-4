@@ -12,6 +12,14 @@ class MyTest(unittest.TestCase):
         effaceTableau(tableau)
         self.assertEqual(tableau, [['-', '-', '-'],['-', '-', '-'],['-', '-', '-']])
 
+    def testLignes(self):
+        tableau = [
+            ['x', 'x', 'x'],
+            ['y', 'x', 'x'],
+            ['z', 'x', 'x'],
+        ]
+        testLignes(tableau)
+
 
 def main():
     unittest.main()
