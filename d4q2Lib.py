@@ -80,12 +80,12 @@ def testLignes(tab):
   
   
 def testCols(tab):
-   ''' (list) ->  str
-   * verifie s’il y a une colonne gagnante.
-   * cherche trois 'X' ou trois 'O' dans une colonne.  
-   * Si on trouve, le caractere 'X' ou 'O' et retourné, sinon '-' est retourné.
-   * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
-   '''
+    ''' (list) ->  str
+    * verifie s’il y a une colonne gagnante.
+    * cherche trois 'X' ou trois 'O' dans une colonne.  
+    * Si on trouve, le caractere 'X' ou 'O' et retourné, sinon '-' est retourné.
+    * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
+    '''
     for i in range (len(tab)):
         if (tab[0][i]==tab[1][i]==tab[2][i]):
             if (tab[0][i]==("X")):
