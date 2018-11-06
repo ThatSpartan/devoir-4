@@ -86,10 +86,13 @@ def testCols(tab):
    * Si on trouve, le caractere 'X' ou 'O' et retourné, sinon '-' est retourné.
    * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
    '''
-    
-   # a completer
-  
-   return '-'   #a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant
+    for i in range (len(tab)):
+        if (tab[0][i]==tab[1][i]==tab[2][i]):
+            if (tab[0][i]==("X")):
+                return ("X")
+            elif (tab[0][i])==("O"):
+                return ("O") 
+    return ("-")
 
    
 def testDiags(tab):
