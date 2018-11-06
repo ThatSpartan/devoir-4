@@ -1,5 +1,5 @@
 ﻿from d4q2Lib import *
-    
+    #max was here
 def afficheTableau (tab):
     '''
     (list) -> None
