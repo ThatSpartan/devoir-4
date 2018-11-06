@@ -70,22 +70,23 @@ def testLignes(tab):
 
     # a completer
 
-    combos = [[[x, y] for x in range(3)] for y in range(3)]
-    # print(combos)
-    show_m(combos)
-
-
-    return '-' # a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant 
+    for i in range (len(tab)):
+        if (tab[i][0]==tab[i][1]==tab[i][2]):
+            if (tab[i][0]==("X")):
+                return ("X")
+            elif (tab[i][0])==("O"):
+                return ("O") 
+    return ("-")
 
   
   
 def testCols(tab):
-   ''' (list) ->  str
-   * verifie s’il y a une colonne gagnante.
-   * cherche trois 'X' ou trois 'O' dans une colonne.  
-   * Si on trouve, le caractere 'X' ou 'O' et retourné, sinon '-' est retourné.
-   * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
-   '''
+    ''' (list) ->  str
+    * verifie s’il y a une colonne gagnante.
+    * cherche trois 'X' ou trois 'O' dans une colonne.  
+    * Si on trouve, le caractere 'X' ou 'O' et retourné, sinon '-' est retourné.
+    * Preconditions: tab est une reference a une matrice n x n qui contient '-', 'X' ou 'O'
+    '''
     for i in range (len(tab)):
         if (tab[0][i]==tab[1][i]==tab[2][i]):
             if (tab[0][i]==("X")):
