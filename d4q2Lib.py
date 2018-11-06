@@ -70,12 +70,13 @@ def testLignes(tab):
 
     # a completer
 
-    combos = [[[x, y] for x in range(3)] for y in range(3)]
-    # print(combos)
-    show_m(combos)
-
-
-    return '-' # a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant 
+    for i in range (len(tab)):
+        if (tab[i][0]==tab[i][1]==tab[i][2]):
+            if (tab[i][0]==("X")):
+                return ("X")
+            elif (tab[i][0])==("O"):
+                return ("O") 
+    return ("-")
 
 
 
