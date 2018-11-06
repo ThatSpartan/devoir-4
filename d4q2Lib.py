@@ -77,8 +77,8 @@ def testLignes(tab):
 
     return '-' # a changer pour retourner le gagnant, ou '-' s'il n'y a pas de gagnant 
 
-  
-  
+
+
 def testCols(tab):
     ''' (list) ->  str
     * verifie s’il y a une colonne gagnante.
@@ -94,7 +94,7 @@ def testCols(tab):
                 return ("O") 
     return ("-")
 
-   
+
 def testDiags(tab):
     ''' (list) ->  str
     * cherche trois 'X' ou trois 'O' dans une diagonale.  
